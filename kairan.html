@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="春日元町自治会のweb回覧板。最新のお知らせをスマホでご確認いただけます。">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>web回覧板 | 春日自治会</title>
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="header__inner">
+      <p class="header__logo">春日自治会</p>
+      <button class="header__hamburger" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ハンバーガーメニュー -->
+  <nav class="nav-menu" id="navMenu">
+    <button class="nav-menu__close" aria-label="メニューを閉じる">✕</button>
+    <ul class="nav-menu__list">
+      <li><a href="https://drive.google.com/drive/folders/1kKnuQ6taV4kphvsRD-vEv2OaGNhFttwv" target="_blank" class="nav-menu__link">📋 web回覧板</a></li>
+      <li><a href="index.html" class="nav-menu__link">🏠 自治会トップページへ</a></li>
+      <li><a href="event_contents.html" class="nav-menu__link">🎆 イベント（花火大会）</a></li>
+      <li><a href="index.html#join" class="nav-menu__link">📝 加入案内</a></li>
+      <li><a href="index.html#access" class="nav-menu__link">📍 自治会事務所へのアクセス</a></li>
+    </ul>
+  </nav>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <main>
+    <section class="kairan-page">
+      <h1 class="kairan-page__title">📋 web回覧板</h1>
+      <p class="kairan-page__lead">
+        春日元町自治会からの最新のお知らせをご確認いただけます。<br>
+        スマホからいつでもご覧いただけます。
+      </p>
+
+      <!-- iframeでGoogleドライブを埋め込み -->
+      <div class="kairan-page__frame-wrap">
+        <iframe
+          src="https://drive.google.com/embeddedfolderview?id=1kKnuQ6taV4kphvsRD-vEv2OaGNhFttwv#list"
+          class="kairan-page__frame"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <p class="kairan-page__note">
+        ※ 表示されない場合は
+        <a href="https://drive.google.com/drive/folders/1kKnuQ6taV4kphvsRD-vEv2OaGNhFttwv" target="_blank">
+          こちらから直接ご確認ください →
+        </a>
+      </p>
+    </section>
+
+    <!-- 戻るボタン -->
+    <div class="event-back">
+      <a href="index.html" class="event-back__btn">← トップページに戻る</a>
+    </div>
+  </main>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <p class="footer__copy">©2026春日元町自治会</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
