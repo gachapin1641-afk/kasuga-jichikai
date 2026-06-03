@@ -83,14 +83,14 @@ const stallData = [
     trio: false
   },
   {
-    name: 'クボタ会',
+    name: '地域クボタ会',
     cardColor: '#FCE4EC',
     nameColor: '#C2185B',
     images: [
       { src: 'images/sweets_wataame.png', alt: '綿菓子' },
       { src: 'images/sweets_wataame_kikai.png', alt: '綿菓子機械' }
     ],
-    menu: ['綿菓子', 'ふわふわ食感'],
+    menu: [{ text: '綿菓子' }, { text: 'ふわふわ食感', desc: true }],
     trio: false
   },
   {
@@ -106,7 +106,7 @@ const stallData = [
     trio: true
   },
   {
-    name: 'お米のお菓子',
+    name: 'お米のお菓子はな',
     cardColor: '#F3E5F5',
     nameColor: '#6A1B9A',
     images: [
@@ -122,27 +122,27 @@ const stallData = [
     images: [
       { src: 'images/food_inarizushi_set.png', alt: 'いなり寿司' }
     ],
-    menu: ['いなり寿司', '地元で愛される老舗の味'],
+    menu: [{ text: 'いなり寿司' }, { text: '地元で愛される老舗の味', desc: true }],
     trio: false
   },
   {
-    name: '子供会',
+    name: 'こども会',
     cardColor: '#FFF9C4',
     nameColor: '#F57F17',
     images: [
       { src: 'images/fukubiki_taikai.png', alt: '福引大会' }
     ],
-    menu: ['あてもの', '何が当たるかわくわく'],
+    menu: [{ text: 'あてもの' }, { text: '何が当たるかわくわく', desc: true }],
     trio: false
   },
   {
-    name: '本部（子供会）',
+    name: '本部（こども会）',
     cardColor: '#E8EAF6',
     nameColor: '#283593',
     images: [
       { src: 'images/omatsuri_fukuro_superball.png', alt: 'スーパーボールすくい' }
     ],
-    menu: ['スーパーボールすくい', '無料で楽しめる', '何個すくえるかな？'],
+    menu: [{ text: 'スーパーボールすくい' }, { text: '無料で楽しめる', desc: true }, { text: '何個すくえるかな？', desc: true }],
     trio: false
   },
   {
@@ -152,7 +152,7 @@ const stallData = [
     images: [
       { src: 'images/kid_job_boy_syouboushi.png', alt: 'ちびっこ消防士' }
     ],
-    menu: ['花火募金募集（ホットコーヒー）', 'ちびっこ消防士フォト撮影'],
+    menu: [{ text: 'ホットコーヒー' }, { text: '（花火募金募集）', desc: true }, 'ちびっこ消防士フォト撮影'],
     trio: false
   }
 ];
@@ -170,7 +170,13 @@ if (stallGrid) {
       .join('');
 
     const menuHTML = stall.menu
-      .map(item => `<li>${item}</li>`)
+      .map(item => {
+        if (typeof item === 'object' && item.desc) {
+          return `<li class="event-stall-card__desc">${item.text}</li>`;
+        }
+        const text = typeof item === 'object' ? item.text : item;
+        return `<li>${text}</li>`;
+      })
       .join('');
 
     stallGrid.innerHTML += `
@@ -181,5 +187,32 @@ if (stallGrid) {
           <ul class="event-stall-card__menu">${menuHTML}</ul>
         </div>
       </div>`;
+  });
+}
+
+// ウエルシアモーダル
+const openWelciaModal = document.getElementById('openWelciaModal');
+const closeWelciaModal = document.getElementById('closeWelciaModal');
+const welciaModal = document.getElementById('welciaModal');
+const welciaOverlay = document.getElementById('welciaOverlay');
+
+if (openWelciaModal) {
+  openWelciaModal.addEventListener('click', () => {
+    welciaModal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  });
+}
+
+if (closeWelciaModal) {
+  closeWelciaModal.addEventListener('click', () => {
+    welciaModal.classList.remove('is-open');
+    document.body.style.overflow = '';
+  });
+}
+
+if (welciaOverlay) {
+  welciaOverlay.addEventListener('click', () => {
+    welciaModal.classList.remove('is-open');
+    document.body.style.overflow = '';
   });
 }

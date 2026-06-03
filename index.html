@@ -65,27 +65,27 @@
       <div class="activities-grid">
         <a href="event_contents.html" class="activities-card">
           <span class="activities-card__icon">🎆</span>
-          <span class="activities-card__name">夏祭り・花火大会</span>
+          <span class="activities-card__name">春日フェスティバル</span>
         </a>
         <a href="#nordic" class="activities-card">
           <span class="activities-card__icon">🏃</span>
-          <span class="activities-card__name">ノルディック体操<br><small>毎月第2・4火曜</small></span>
+          <span class="activities-card__name">文化・健康部</span>
         </a>
         <a href="#sports" class="activities-card">
           <span class="activities-card__icon">🎳</span>
-          <span class="activities-card__name">体育部の活動<br><small>年1回開催</small></span>
+          <span class="activities-card__name">体育部の活動</span>
         </a>
         <a href="#bousai" class="activities-card">
           <span class="activities-card__icon">🚒</span>
-          <span class="activities-card__name">防災訓練<br><small>年2回実施</small></span>
+          <span class="activities-card__name">防災部の活動</span>
         </a>
         <a href="#community" class="activities-card">
           <span class="activities-card__icon">🚔</span>
-          <span class="activities-card__name">防犯パトロール<br><small>年4回実施</small></span>
+          <span class="activities-card__name">防犯部の活動</span>
         </a>
-        <a href="#sports" class="activities-card">
+        <a href="#community" class="activities-card">
           <span class="activities-card__icon">⛳</span>
-          <span class="activities-card__name">グラウンドゴルフ<br><small>年1回開催</small></span>
+          <span class="activities-card__name">環境部の活動</span>
         </a>
       </div>
     </section>
@@ -93,7 +93,7 @@
     <!-- ノルディック体操 -->
     <section class="nordic" id="nordic">
       <div class="nordic__red-bar"></div>
-      <h2 class="nordic__title">ノルディック体操</h2>
+      <h2 class="nordic__title"><small>文化・健康部</small><br>ノルディック体操</h2>
       <p class="nordic__catch">＼100歳まで元気に！／</p>
       <div class="nordic__content">
         <div class="nordic__left">
@@ -103,20 +103,80 @@
           <div class="nordic__badge">
             <span>骨密度検査</span>
             <span>体力測定</span>
-            <span>年数回実施</span>
+            <span>年1回実施</span>
           </div>
           <div class="nordic__badge-info">
             <p class="nordic__project">津田南区元気づくりプロジェクト</p>
             <p>📅 毎月第2・第4火曜　14:30〜</p>
             <p>📍 春日公会堂</p>
+            <p>🏆 頑張った賞贈呈　6月</p>
           </div>
           <div class="nordic__info">
-            <p class="nordic__welcia">🛒 体操の日はウエルシア移動販売も！<br>毎週火曜日開催</p>
+            <div class="nordic__welcia">
+              <p>🛒 体操の日はウエルシア移動販売も！<br>毎週火曜日開催</p>
+              <button class="nordic__welcia-btn" id="openWelciaModal">詳細を見る →</button>
+            </div>
           </div>
         </div>
       </div>
       <div class="nordic__red-bar"></div>
     </section>
+
+    <!-- ウエルシアモーダル -->
+    <div class="welcia-modal" id="welciaModal">
+      <div class="welcia-modal__overlay" id="welciaOverlay"></div>
+      <div class="welcia-modal__content">
+        <button class="welcia-modal__close" id="closeWelciaModal">✕</button>
+
+        <!-- ヘッダー -->
+        <div class="welcia-modal__header">
+          <p class="welcia-modal__logo">welcia</p>
+          <p class="welcia-modal__tagline">ネットワークでお店とつながる移動販売</p>
+        </div>
+
+        <!-- 取扱商品 -->
+        <div class="welcia-modal__items">
+          <span>🧴 日用品</span>
+          <span>💄 化粧品</span>
+          <span>🍱 食品</span>
+          <span>💊 健康食品</span>
+          <span>🧊 冷凍食品</span>
+        </div>
+
+        <!-- お支払い -->
+        <div class="welcia-modal__payment">
+          <p>💳 クレジット・モバイル決済・電子マネー可</p>
+          <p>🏦 公共料金・各種料金のお支払い可</p>
+        </div>
+
+        <!-- 時刻 -->
+        <p class="welcia-modal__sub">📅 毎週火曜日</p>
+        <div class="welcia-modal__schedule">
+          <div class="welcia-modal__row">
+            <span class="welcia-modal__num">①</span>
+            <span class="welcia-modal__place">春日元町公園前</span>
+            <span class="welcia-modal__time">15:30〜15:50</span>
+          </div>
+          <div class="welcia-modal__row">
+            <span class="welcia-modal__num">②</span>
+            <span class="welcia-modal__place">春日公会堂駐車場</span>
+            <span class="welcia-modal__time">16:00〜16:20</span>
+          </div>
+        </div>
+        <p class="welcia-modal__note">※道路状況や販売状況により到着時間が前後する場合があります<br>※ご利用状況により販売時間が変更になる可能性があります</p>
+
+        <!-- お問い合わせ -->
+        <div class="welcia-modal__contact">
+          <p class="welcia-modal__contact-title">【お問い合わせ】</p>
+          <p class="welcia-modal__contact-label">◎ 商品のご注文は（前日までにご連絡ください）</p>
+          <p>ウエルシア枚方中宮本町店</p>
+          <p class="welcia-modal__tel">TEL：072-805-3545</p>
+          <p class="welcia-modal__contact-label">◎ 停留場所に関すること</p>
+          <p>枚方市健康福祉部<br>健康づくり・介護予防課</p>
+          <p class="welcia-modal__tel">TEL：072-841-1458</p>
+        </div>
+      </div>
+    </div>
 
     <!-- 体育部 -->
     <section class="sports" id="sports">
@@ -136,7 +196,7 @@
             </div>
             <div class="sports__item">
               <p class="sports__name">🌳 公園清掃</p>
-              <p class="sports__detail">年数回実施</p>
+              <p class="sports__detail">年1回実施</p>
             </div>
             <div class="sports__item">
               <p class="sports__name">🎯 みんなで遊ぼう（仮称）</p>
@@ -149,8 +209,6 @@
           </div>
         </div>
         <div class="sports__nordic-extra">
-          <p><span class="sports__name">🏆 頑張った賞贈呈</span><br><span class="sports__detail">6月</span></p>
-          <p><span class="sports__name">🚶 ノルディックウォーキングイベント</span><br><span class="sports__detail">11〜12月予定</span></p>
         </div>
       </div>
 
@@ -171,11 +229,12 @@
           </div>
           <div class="sports__col sports__col--imgs">
             <img src="images/bowling_strike.png" alt="ボウリング" class="sports__img">
+            <img src="images/sports_ground_golf.png" alt="グラウンドゴルフ" class="sports__img">
           </div>
           <div class="sports__col">
             <div class="sports__item">
               <p class="sports__name">🌳 公園清掃</p>
-              <p class="sports__detail">年数回実施</p>
+              <p class="sports__detail">年1回実施</p>
             </div>
           </div>
           <div class="sports__col">
@@ -185,21 +244,6 @@
             </div>
           </div>
           <div class="sports__col sports__col--imgs">
-          </div>
-          <div class="sports__col">
-            <div class="sports__item">
-              <p class="sports__name">🏆 頑張った賞贈呈</p>
-              <p class="sports__detail">6月</p>
-            </div>
-          </div>
-          <div class="sports__col">
-            <div class="sports__item">
-              <p class="sports__name">🚶 ノルディックウォーキング</p>
-              <p class="sports__detail">11〜12月予定</p>
-            </div>
-          </div>
-          <div class="sports__col sports__col--imgs">
-            <img src="images/sports_ground_golf.png" alt="グラウンドゴルフ" class="sports__img">
           </div>
         </div>
       </div>
@@ -213,11 +257,13 @@
           <p class="community__card-title">🚔 防犯部</p>
           <p class="community__card-item">防犯パトロール　年4回</p>
           <p class="community__card-detail">危険箇所・不法駐車・防犯灯の確認</p>
+          <p class="community__card-item">公園清掃　年1回</p>
         </div>
         <div class="community__card">
           <p class="community__card-title">🌿 環境部</p>
           <p class="community__card-item">全戸一斉溝掃除　年1回</p>
           <p class="community__card-item">クリーンパトロール　年1回</p>
+          <p class="community__card-item">公園清掃　年1回</p>
         </div>
       </div>
       <!-- ★修正⑤：リンク先をGoogleドライブに変更 -->
@@ -226,7 +272,7 @@
 
     <!-- 防災部 -->
     <section class="bousai" id="bousai">
-      <h2 class="bousai__title">🚒 防災・減災</h2>
+      <h2 class="bousai__title">🚒 防災部の活動</h2>
       <p class="bousai__lead">⚠️ あなたの避難場所を確認してください</p>
       <div class="bousai__table-wrap">
         <table class="bousai__table">
@@ -259,9 +305,7 @@
       <p class="bousai__kumiban">※ 組番号は回覧板・自治会事務所でご確認ください</p>
       <div class="bousai__training">
         <p class="bousai__training-title">🏃 防災訓練</p>
-        <p>自主防災避難訓練　年2回</p>
-        <p>春日自治会自主防災訓練　27年1月予定</p>
-        <p>津田南区避難訓練　27年2月予定</p>
+        <p>春日自治会自主防災避難訓練　27年1月予定</p>
       </div>
       <div class="bousai__checklist">
         <p class="bousai__checklist-title">✅ 非常用持ち出し品チェックリスト</p>
@@ -327,11 +371,10 @@
       <h2 class="section-title">加入のご案内</h2>
       <ul class="join__merits">
         <li>✅ 回覧板がスマホで見られる</li>
-        <li>✅ イベント参加時に会員特典あり（詳しくは回覧板へ）</li>
         <li>✅ 災害時に地域情報がいち早く届く</li>
         <li>✅ ノルディック体操など地域活動に参加できる</li>
       </ul>
-      <p class="join__text">春日元町自治会への加入をお待ちしております。まずはお気軽にお電話ください。</p>
+      <p class="join__text">春日自治会への加入をお待ちしております。まずはお気軽にお電話ください。</p>
       <a href="tel:0728582270" class="join__tel-btn">📞 072-858-2270（自治会事務所）</a>
     </section>
 
@@ -361,7 +404,7 @@
 
   <!-- フッター -->
   <footer class="footer">
-    <p class="footer__copy">©2026春日元町自治会</p>
+    <p class="footer__copy">©2026春日自治会</p>
   </footer>
 
   <script src="main.js"></script>
