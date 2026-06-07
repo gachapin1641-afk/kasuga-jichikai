@@ -1219,13 +1219,13 @@ a {
     top: -10px;
     left: 50%;
     transform: translateX(-50%) rotate(10deg);
-    flex-direction: row;
+    flex-direction: row-reverse;
     gap: 4px;
   }
 
   .nordic__badge span {
     writing-mode: vertical-rl;
-    text-orientation: mixed;
+    text-orientation: upright;
   }
 
   .nordic__badge-info {
