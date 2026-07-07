@@ -321,62 +321,14 @@ a {
 .nordic__left {
   display: flex;
   flex-direction: column;
-}
-
-.nordic__left-info {
-  padding: 16px 16px 0;
-  font-size: 16px;
-  display: flex;
-  flex-direction: column;
   gap: 8px;
+  font-size: 16px;
+  padding: 0 0 16px;
 }
 
 .nordic__right {
-  position: relative;
-  min-height: 110px;
-}
-
-.nordic__badge-info {
-  padding: 16px 16px 0;
-  font-size: 15px;
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.nordic__badge {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: var(--color-red);
-  color: #fff;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: 14px;
-  font-weight: 700;
-  text-align: center;
-  transform: rotate(10deg);
-  line-height: 1.4;
-  padding: 8px;
-  z-index: 1;
-}
-
-.nordic__badge span {
-  writing-mode: horizontal-tb;
-}
-
-.nordic__info {
-  padding: 16px 16px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-size: 16px;
-  margin-top: 16px;
 }
 
 .nordic__project {
@@ -389,6 +341,13 @@ a {
   border-left: 4px solid var(--color-red);
   padding: 12px 12px;
   font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-self: flex-start;
+}
+
+.nordic__row {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -1211,41 +1170,6 @@ a {
     font-size: 32px;
   }
 
-  .nordic__badge {
-    width: 250px;
-    height: 330px;
-    font-size: 22px;
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%) rotate(10deg);
-    flex-direction: row-reverse;
-    gap: 4px;
-  }
-
-  .nordic__badge span {
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-  }
-
-  .nordic__badge-info {
-    position: static;
-    width: auto;
-    text-align: center;
-    font-size: 20px;
-    padding: 340px 0 0;
-    white-space: nowrap;
-  }
-
-  .nordic__right {
-    flex: 1;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 500px;
-  }
-
   .nordic__content {
     display: flex;
     align-items: flex-start;
@@ -1254,24 +1178,30 @@ a {
   }
 
   .nordic__left {
-    width: 50%;
+    flex: 1;
+    font-size: 18px;
+    padding: 16px 0 40px;
+    gap: 12px;
+  }
+
+  .nordic__welcia {
+    align-self: flex-start;
+    white-space: nowrap;
+    margin-top: 16px;
+  }
+
+  .nordic__right {
+    width: 380px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
   }
 
   .nordic__img {
     width: 100%;
+    max-width: 380px;
     margin: 0;
-  }
-
-  .nordic__left-info {
-    font-size: 18px;
-    padding: 16px 0 0;
-    text-align: center;
-  }
-
-  .nordic__info {
-    font-size: 18px;
-    padding: 16px 0 40px;
-    text-align: center;
   }
 
   .sports {
@@ -2260,5 +2190,25 @@ a {
 
   .event-modal__img {
     flex: 1;
+  }
+}
+
+/* nordic__row 横並び：1054px以上 */
+@media (min-width: 1054px) {
+  .nordic__row {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+}
+
+/* SP専用表示制御 */
+.sp-only {
+  display: inline;
+}
+
+@media (min-width: 768px) {
+  .sp-only {
+    display: none;
   }
 }
