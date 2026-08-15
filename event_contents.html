@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>春日フェスティバル2026 | 春日自治会</title>
 
   <!-- 構造化データ：Googleにイベント情報を伝える -->
@@ -61,14 +62,14 @@
 
   <!-- ハンバーガーメニュー -->
   <nav class="nav-menu" id="navMenu">
-    <button class="nav-menu__close" aria-label="メニューを閉じる">✕</button>
+    <button class="nav-menu__close" aria-label="メニューを閉じる"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
     <ul class="nav-menu__list">
-      <li><a href="https://drive.google.com/drive/folders/1kKnuQ6taV4kphvsRD-vEv2OaGNhFttwv" target="_blank" class="nav-menu__link">📋 web回覧板</a></li>
-      <li><a href="index.html" class="nav-menu__link">🏠 自治会トップページへ</a></li>
-      <li><a href="index.html#activities" class="nav-menu__link">🏃 活動紹介</a></li>
-      <li><a href="index.html#join" class="nav-menu__link">📝 加入案内</a></li>
-      <li><a href="index.html#bousai" class="nav-menu__link">🚒 防災情報</a></li>
-      <li><a href="index.html#access" class="nav-menu__link">📍 自治会事務所へのアクセス</a></li>
+      <li><a href="https://drive.google.com/drive/folders/1kKnuQ6taV4kphvsRD-vEv2OaGNhFttwv" target="_blank" class="nav-menu__link"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i> web回覧板</a></li>
+      <li><a href="index.html" class="nav-menu__link"><i class="fa-solid fa-house" aria-hidden="true"></i> 自治会トップページへ</a></li>
+      <li><a href="index.html#activities" class="nav-menu__link"><i class="fa-solid fa-person-walking" aria-hidden="true"></i> 活動紹介</a></li>
+      <li><a href="index.html#join" class="nav-menu__link"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> 加入案内</a></li>
+      <li><a href="index.html#bousai" class="nav-menu__link"><i class="fa-solid fa-truck-medical" aria-hidden="true"></i> 防災情報</a></li>
+      <li><a href="index.html#access" class="nav-menu__link"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 自治会事務所へのアクセス</a></li>
     </ul>
   </nav>
   <div class="nav-overlay" id="navOverlay"></div>
@@ -77,18 +78,18 @@
 
     <!-- 今年の開催情報 -->
     <section class="event-next">
-      <h1 class="event-next__title">🎆 春日フェスティバル　2026年</h1>
+      <h1 class="event-next__title"><i class="fa-solid fa-fire" aria-hidden="true"></i> 春日フェスティバル　2026年</h1>
       <div class="event-next__info">
         <div class="event-info__row">
-          <span class="event-info__label">📅 日時</span>
+          <span class="event-info__label"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> 日時</span>
           <span class="event-info__value">2026年11月22日（日）開催</span>
         </div>
         <div class="event-info__row">
-          <span class="event-info__label">📍 場所</span>
+          <span class="event-info__label"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 場所</span>
           <span class="event-info__value">春日東野幼稚園 第2グラウンド</span>
         </div>
         <div class="event-info__row">
-          <span class="event-info__label">🎟️ 入場</span>
+          <span class="event-info__label"><i class="fa-solid fa-ticket" aria-hidden="true"></i> 入場</span>
           <span class="event-info__value">無料（雨天中止）</span>
         </div>
       </div>
@@ -97,7 +98,12 @@
 
     <!-- 去年の様子 -->
     <section class="event-fv">
-      <div class="event-fv__img-wrap"></div>
+      <div class="event-fv__media">
+        <video class="event-fv__video" autoplay muted playsinline preload="auto" poster="images/event_fv.png">
+          <source src="video/fireworks_event.mp4" type="video/mp4">
+        </video>
+        <img class="event-fv__still" src="images/event_fv.png" alt="春日フェスティバルの花火">
+      </div>
       <div class="event-fv__text">
         <h2 class="event-fv__title">春日<br>フェスティバル</h2>
       </div>
@@ -105,7 +111,7 @@
 
     <!-- プログラム -->
     <section class="event-program">
-      <h2 class="event-section-title">📋 プログラム</h2>
+      <h2 class="event-section-title"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i> プログラム</h2>
       <p class="event-program__note">（去年のプログラム）</p>
       <div class="event-program__list">
         <div class="event-program__item">
@@ -138,12 +144,12 @@
         </div>
         <div class="event-program__item event-program__item--highlight">
           <span class="event-program__time">18:30</span>
-          <span class="event-program__content">会長挨拶・来賓あいさつ<br>🎆 花火打ち上げ・終了挨拶</span>
+          <span class="event-program__content">会長挨拶・来賓あいさつ<br><i class="fa-solid fa-fire" aria-hidden="true"></i> 花火打ち上げ・終了挨拶</span>
         </div>
       </div>
       <div class="event-program__modal-btn-wrap">
         <button class="event-program__modal-btn" id="openModal">
-          📄 去年のチラシ・ポスターを見る →
+          <i class="fa-solid fa-file-lines" aria-hidden="true"></i> 去年のチラシ・ポスターを見る →
         </button>
       </div>
     </section>
@@ -152,7 +158,7 @@
     <div class="event-modal" id="eventModal">
       <div class="event-modal__overlay" id="modalOverlay"></div>
       <div class="event-modal__content">
-        <button class="event-modal__close" id="closeModal">✕</button>
+        <button class="event-modal__close" id="closeModal"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
         <h3 class="event-modal__title">2025年 チラシ・プログラム</h3>
         <div class="event-modal__imgs">
           <img src="images/kasuga_festival_poster_2025.jpg" alt="2025年ポスター" class="event-modal__img">
@@ -163,24 +169,24 @@
 
     <!-- 屋台・出店 -->
     <section class="event-stalls">
-      <h2 class="event-section-title">🏮 屋台・出店</h2>
+      <h2 class="event-section-title"><i class="fa-solid fa-store" aria-hidden="true"></i> 屋台・出店</h2>
       <!-- ★来年の更新はmain.jsのstallDataだけ編集してください -->
       <div class="event-stalls__grid" id="stallGrid"></div>
     </section>
 
     <!-- クライマックスは花火 -->
     <section class="event-fireworks">
-      <div class="event-fireworks__img-wrap"></div>
+      <div class="event-fireworks__img-wrap" style="background-image: url('images/event_fv.png'); background-size: cover; background-position: center;"></div>
       <div class="event-fireworks__text">
         <p class="event-fireworks__catch">クライマックスは花火</p>
         <h2 class="event-fireworks__title">夜空に咲く、一輪の花</h2>
-        <p class="event-fireworks__time">🎆 18:30 打ち上げ開始</p>
+        <p class="event-fireworks__time"><i class="fa-solid fa-fire" aria-hidden="true"></i> 18:30 打ち上げ開始</p>
       </div>
     </section>
 
     <!-- アクセス -->
     <section class="event-access">
-      <h2 class="event-section-title">📍 アクセス</h2>
+      <h2 class="event-section-title"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> アクセス</h2>
       <div class="event-access__map">
         <iframe
           src="https://maps.google.com/maps?q=大阪府枚方市春日元町+春日東野幼稚園&output=embed"
@@ -188,7 +194,7 @@
         </iframe>
       </div>
       <div class="event-access__info">
-        <p>📍 春日東野幼稚園 第2グラウンド</p>
+        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 春日東野幼稚園 第2グラウンド</p>
         <p>大阪府枚方市春日元町</p>
       </div>
       <div class="event-access__gate">
@@ -198,8 +204,8 @@
 
     <!-- ★修正⑦：次の導線ボタン -->
     <div class="event-next-action">
-      <a href="https://drive.google.com/drive/folders/1kKnuQ6taV4kphvsRD-vEv2OaGNhFttwv" target="_blank" class="event-next-action__btn">📋 web回覧板を見る</a>
-      <a href="index.html#join" class="event-next-action__btn event-next-action__btn--sub">📝 自治会への加入はこちら</a>
+      <a href="https://drive.google.com/drive/folders/1kKnuQ6taV4kphvsRD-vEv2OaGNhFttwv" target="_blank" class="event-next-action__btn"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i> web回覧板を見る</a>
+      <a href="index.html#join" class="event-next-action__btn event-next-action__btn--sub"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> 自治会への加入はこちら</a>
     </div>
 
     <!-- 戻るボタン -->
@@ -215,5 +221,27 @@
   </footer>
 
   <script src="main.js"></script>
+  <script>
+    // event-fv動画：再生が終わったら静止画に切り替えて固定。クリックで再生し直す
+    (function () {
+      const media = document.querySelector('.event-fv__media');
+      const video = document.querySelector('.event-fv__video');
+      const still = document.querySelector('.event-fv__still');
+      if (video && still && media) {
+        video.addEventListener('ended', function () {
+          still.classList.add('is-visible');
+          video.style.display = 'none';
+        });
+
+        media.style.cursor = 'pointer';
+        media.addEventListener('click', function () {
+          still.classList.remove('is-visible');
+          video.style.display = 'block';
+          video.currentTime = 0;
+          video.play();
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

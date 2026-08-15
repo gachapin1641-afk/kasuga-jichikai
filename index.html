@@ -22,6 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>春日自治会｜枚方市津田南・春日フェスティバル花火大会</title>
   <meta name="google-site-verification" content="PqmAMrVNYUGMASVAorqAZzDQEdU26RsJ-4uR0NtNo2w" />
 </head>
@@ -41,14 +42,14 @@
 
   <!-- ハンバーガーメニュー -->
   <nav class="nav-menu" id="navMenu">
-    <button class="nav-menu__close" aria-label="メニューを閉じる">✕</button>
+    <button class="nav-menu__close" aria-label="メニューを閉じる"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
     <ul class="nav-menu__list">
-      <li><a href="kairan.html" class="nav-menu__link">📋 web回覧板</a></li>
-      <li><a href="event_contents.html" class="nav-menu__link">🎆 イベント（花火大会）</a></li>
-      <li><a href="#activities" class="nav-menu__link">🏃 活動紹介</a></li>
-      <li><a href="#join" class="nav-menu__link">📝 加入案内</a></li>
-      <li><a href="#bousai" class="nav-menu__link">🚒 防災情報</a></li>
-      <li><a href="#access" class="nav-menu__link">📍 アクセス</a></li>
+      <li><a href="kairan.html" class="nav-menu__link"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i> web回覧板</a></li>
+      <li><a href="event_contents.html" class="nav-menu__link"><i class="fa-solid fa-fire" aria-hidden="true"></i> イベント（花火大会）</a></li>
+      <li><a href="#activities" class="nav-menu__link"><i class="fa-solid fa-person-walking" aria-hidden="true"></i> 活動紹介</a></li>
+      <li><a href="#join" class="nav-menu__link"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> 加入案内</a></li>
+      <li><a href="#bousai" class="nav-menu__link"><i class="fa-solid fa-truck-medical" aria-hidden="true"></i> 防災情報</a></li>
+      <li><a href="#access" class="nav-menu__link"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> アクセス</a></li>
     </ul>
   </nav>
   <div class="nav-overlay" id="navOverlay"></div>
@@ -57,10 +58,17 @@
 
     <!-- FV -->
     <section class="fv">
-      <div class="fv__img-wrap"></div>
+      <div class="fv__media">
+        <video class="fv__video" autoplay muted playsinline preload="auto" poster="images/fv_pc.png">
+          <source src="video/fv_pc.mp4" type="video/mp4">
+        </video>
+        <img class="fv__still" src="images/fv_pc.png" alt="春日フェスティバルの花火">
+      </div>
       <div class="fv__text">
-        <p class="fv__catch">あの夜を、一緒に。</p>
-        <p class="fv__sub">子どもの『わぁ』がまちの宝物。</p>
+        <p class="fv__catch">
+          <span class="fv__fade fv__fade--1">あの夜を、</span><span class="fv__fade fv__fade--2">一緒に。</span>
+        </p>
+        <p class="fv__sub fv__fade fv__fade--3">子どもの『わぁ』がまちの宝物。</p>
       </div>
     </section>
 
@@ -74,66 +82,62 @@
       </div>
       <div class="activities-grid">
         <a href="event_contents.html" class="activities-card">
-          <span class="activities-card__icon">🎆</span>
+          <span class="activities-card__icon"><i class="fa-solid fa-fire" aria-hidden="true"></i></span>
           <span class="activities-card__name">春日フェスティバル</span>
         </a>
         <a href="#nordic" class="activities-card">
-          <span class="activities-card__icon">🏃</span>
+          <span class="activities-card__icon"><i class="fa-solid fa-person-walking" aria-hidden="true"></i></span>
           <span class="activities-card__name">文化・健康部</span>
         </a>
         <a href="#sports" class="activities-card">
-          <span class="activities-card__icon">🎳</span>
+          <span class="activities-card__icon"><i class="fa-solid fa-bowling-ball" aria-hidden="true"></i></span>
           <span class="activities-card__name">体育部の活動</span>
         </a>
         <a href="#bousai" class="activities-card">
-          <span class="activities-card__icon">🚒</span>
+          <span class="activities-card__icon"><i class="fa-solid fa-truck-medical" aria-hidden="true"></i></span>
           <span class="activities-card__name">防災部の活動</span>
         </a>
-        <a href="#community" class="activities-card">
-          <span class="activities-card__icon">🚔</span>
+        <a href="#bohan" class="activities-card">
+          <span class="activities-card__icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
           <span class="activities-card__name">防犯部の活動</span>
         </a>
-        <a href="#community" class="activities-card">
-          <span class="activities-card__icon">🌿</span>
+        <a href="#kankyo" class="activities-card">
+          <span class="activities-card__icon"><i class="fa-solid fa-leaf" aria-hidden="true"></i></span>
           <span class="activities-card__name">環境部の活動</span>
         </a>
       </div>
     </section>
 
-    <!-- ノルディック体操 -->
-    <section class="nordic" id="nordic">
-      <div class="nordic__red-bar"></div>
-      <h2 class="nordic__title"><small>文化・健康部</small><br>ノルディック健康体操</h2>
-      <p class="nordic__catch">＼100歳まで元気に！／</p>
-      <div class="nordic__content">
-        <div class="nordic__left">
-          <p class="nordic__project">津田南校区元気づくりプロジェクト</p>
-          <div class="nordic__row">
-            <p>📅 毎月第2・第4火曜　14:30〜</p>
-            <p>📍 春日公会堂</p>
-          </div>
-          <div class="nordic__row">
-            <p>🏆 頑張った賞贈呈　6月</p>
-            <p>🦴 骨密度検査・体力測定　年1回実施</p>
-          </div>
-          <p>🌳 公園清掃　年1回実施</p>
-          <div class="nordic__welcia">
-            <p>🛒 体操の日はウエルシア移動販売も！<br class="sp-only">　毎週火曜日開催</p>
-            <button class="nordic__welcia-btn" id="openWelciaModal">詳細を見る →</button>
-          </div>
+    <!-- 文化・健康部 -->
+    <section class="dept-section" id="nordic">
+      <div class="dept-section__red-bar"></div>
+      <h2 class="dept-section__title">文化・健康部の活動</h2>
+      <div class="dept-section__body">
+        <div class="dept-section__list">
+          <p>ノルディック健康体操　月2回（第2・4火曜）14:30〜</p>
+          <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 春日公会堂</p>
         </div>
-        <div class="nordic__right">
-          <img src="images/walking_poles.jpg" alt="ノルディック体操のイラスト" class="nordic__img">
+        <p class="dept-section__project">津田南校区元気づくり・地域づくりプロジェクト企画</p>
+        <div class="dept-section__row">
+          <p><i class="fa-solid fa-trophy" aria-hidden="true"></i> 頑張った賞贈呈　年1回（6月）</p>
+          <p><i class="fa-solid fa-bone" aria-hidden="true"></i> 骨密度検査・体力測定　年1回実施</p>
+        </div>
+        <p><i class="fa-solid fa-tree" aria-hidden="true"></i> 公園清掃　年1回実施</p>
+        <div class="dept-section__welcia">
+          <p><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i> 体操の日はウエルシア移動販売も！<br class="sp-only">　毎週火曜日開催</p>
+          <button class="dept-section__welcia-btn" id="openWelciaModal">詳細を見る →</button>
+        </div>
+        <div class="dept-section__image">
+          <img src="images/bunka_kenkobu.png" alt="文化・健康部 ノルディック健康体操の様子" class="dept-section__img">
         </div>
       </div>
-      <div class="nordic__red-bar"></div>
     </section>
 
     <!-- ウエルシアモーダル -->
     <div class="welcia-modal" id="welciaModal">
       <div class="welcia-modal__overlay" id="welciaOverlay"></div>
       <div class="welcia-modal__content">
-        <button class="welcia-modal__close" id="closeWelciaModal">✕</button>
+        <button class="welcia-modal__close" id="closeWelciaModal"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
 
         <!-- ヘッダー -->
         <div class="welcia-modal__header">
@@ -143,21 +147,21 @@
 
         <!-- 取扱商品 -->
         <div class="welcia-modal__items">
-          <span>🧴 日用品</span>
-          <span>💄 化粧品</span>
-          <span>🍱 食品</span>
-          <span>💊 健康食品</span>
-          <span>🧊 冷凍食品</span>
+          <span><i class="fa-solid fa-pump-soap" aria-hidden="true"></i> 日用品</span>
+          <span><i class="fa-solid fa-spray-can-sparkles" aria-hidden="true"></i> 化粧品</span>
+          <span><i class="fa-solid fa-bowl-food" aria-hidden="true"></i> 食品</span>
+          <span><i class="fa-solid fa-pills" aria-hidden="true"></i> 健康食品</span>
+          <span><i class="fa-solid fa-snowflake" aria-hidden="true"></i> 冷凍食品</span>
         </div>
 
         <!-- お支払い -->
         <div class="welcia-modal__payment">
-          <p>💳 クレジット・モバイル決済・電子マネー可</p>
-          <p>🏦 公共料金・各種料金のお支払い可</p>
+          <p><i class="fa-solid fa-credit-card" aria-hidden="true"></i> クレジット・モバイル決済・電子マネー可</p>
+          <p><i class="fa-solid fa-building-columns" aria-hidden="true"></i> 公共料金・各種料金のお支払い可</p>
         </div>
 
         <!-- 時刻 -->
-        <p class="welcia-modal__sub">📅 毎週火曜日</p>
+        <p class="welcia-modal__sub"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> 毎週火曜日</p>
         <div class="welcia-modal__schedule">
           <div class="welcia-modal__row">
             <span class="welcia-modal__num">①</span>
@@ -186,101 +190,61 @@
     </div>
 
     <!-- 体育部 -->
-    <section class="sports" id="sports">
-      <h2 class="section-title">🏅 体育部の活動</h2>
-
-      <!-- SP版のみ表示 -->
-      <div class="sports__sp-only">
-        <div class="sports__content">
-          <div class="sports__list">
-            <div class="sports__item">
-              <p class="sports__name">🎳 ボウリング大会</p>
-              <p class="sports__detail">年1回開催・参加賞あり</p>
-            </div>
-            <div class="sports__item">
-              <p class="sports__name">⛳ グラウンドゴルフ大会</p>
-              <p class="sports__detail">年1回開催</p>
-            </div>
-            <div class="sports__item">
-              <p class="sports__name">🌳 公園清掃</p>
-              <p class="sports__detail">年1回実施</p>
-            </div>
-            <div class="sports__item">
-              <p class="sports__name">🎯 みんなで遊ぼう（仮称）</p>
-              <p class="sports__detail">企画中</p>
-            </div>
-          </div>
-          <div class="sports__imgs">
-            <img src="images/bowling_strike.png" alt="ボウリング" class="sports__img">
-            <img src="images/sports_ground_golf.png" alt="グラウンドゴルフ" class="sports__img">
-          </div>
+    <section class="dept-section" id="sports">
+      <div class="dept-section__red-bar"></div>
+      <h2 class="dept-section__title">体育部の活動</h2>
+      <div class="dept-section__body">
+        <div class="dept-section__list">
+          <p><i class="fa-solid fa-bowling-ball" aria-hidden="true"></i> ボウリング大会　年1回開催・参加賞あり</p>
+          <p><i class="fa-solid fa-golf-ball-tee" aria-hidden="true"></i> グラウンドゴルフ大会　年1回開催</p>
+          <p><i class="fa-solid fa-tree" aria-hidden="true"></i> 公園清掃　年1回実施</p>
+          <p><i class="fa-solid fa-bullseye" aria-hidden="true"></i> みんなで遊ぼう（仮称）　企画中</p>
         </div>
-        <div class="sports__nordic-extra">
+        <div class="dept-section__image">
+          <img src="images/taiikubu.png" alt="体育部 ボウリング大会の記念撮影" class="dept-section__img">
         </div>
       </div>
-
-      <!-- PC版のみ表示 -->
-      <div class="sports__pc-only">
-        <div class="sports__grid">
-          <div class="sports__col">
-            <div class="sports__item">
-              <p class="sports__name">🎳 ボウリング大会</p>
-              <p class="sports__detail">年1回開催・参加賞あり</p>
-            </div>
-          </div>
-          <div class="sports__col">
-            <div class="sports__item">
-              <p class="sports__name">⛳ グラウンドゴルフ大会</p>
-              <p class="sports__detail">年1回開催</p>
-            </div>
-          </div>
-          <div class="sports__col sports__col--imgs">
-            <img src="images/bowling_strike.png" alt="ボウリング" class="sports__img">
-            <img src="images/sports_ground_golf.png" alt="グラウンドゴルフ" class="sports__img">
-          </div>
-          <div class="sports__col">
-            <div class="sports__item">
-              <p class="sports__name">🌳 公園清掃</p>
-              <p class="sports__detail">年1回実施</p>
-            </div>
-          </div>
-          <div class="sports__col">
-            <div class="sports__item">
-              <p class="sports__name">🎯 みんなで遊ぼう（仮称）</p>
-              <p class="sports__detail">企画中</p>
-            </div>
-          </div>
-          <div class="sports__col sports__col--imgs">
-          </div>
-        </div>
-      </div>
-
     </section>
 
-    <!-- 防犯・環境 -->
-    <section class="community" id="community">
-      <div class="community__cards">
-        <div class="community__card">
-          <p class="community__card-title">🚔 防犯部</p>
-          <p class="community__card-item">防犯パトロール　年4回</p>
-          <p class="community__card-detail">危険箇所・不法駐車・防犯灯の確認</p>
-          <p class="community__card-item">公園清掃　年1回</p>
+    <!-- 防犯部 -->
+    <section class="dept-section" id="bohan">
+      <div class="dept-section__red-bar"></div>
+      <h2 class="dept-section__title">防犯部の活動</h2>
+      <div class="dept-section__body">
+        <div class="dept-section__list">
+          <p><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> 防犯パトロール　年4回</p>
+          <p class="dept-section__detail">危険箇所・不法駐車・防犯灯の確認</p>
+          <p><i class="fa-solid fa-tree" aria-hidden="true"></i> 公園清掃　年1回</p>
         </div>
-        <div class="community__card">
-          <p class="community__card-title">🌿 環境部</p>
-          <p class="community__card-item">全戸一斉溝掃除　年1回</p>
-          <p class="community__card-item">クリーンパトロール　年1回</p>
-          <p class="community__card-item">公園清掃　年1回</p>
+        <div class="dept-section__image">
+          <img src="images/bohanbu.png" alt="防犯部 防犯パトロールの様子" class="dept-section__img">
+        </div>
+      </div>
+    </section>
+
+    <!-- 環境部 -->
+    <section class="dept-section" id="kankyo">
+      <div class="dept-section__red-bar"></div>
+      <h2 class="dept-section__title">環境部の活動</h2>
+      <div class="dept-section__body">
+        <div class="dept-section__list">
+          <p><i class="fa-solid fa-water" aria-hidden="true"></i> 全戸一斉溝掃除　年1回</p>
+          <p><i class="fa-solid fa-broom" aria-hidden="true"></i> クリーンパトロール　年1回</p>
+          <p><i class="fa-solid fa-tree" aria-hidden="true"></i> 公園清掃　年1回</p>
+        </div>
+        <div class="dept-section__image">
+          <img src="images/kankyobu.png" alt="環境部 溝掃除の様子" class="dept-section__img">
         </div>
       </div>
       <!-- ★修正⑤：リンク先をGoogleドライブに変更 -->
-      <a href="https://drive.google.com/drive/folders/1kKnuQ6taV4kphvsRD-vEv2OaGNhFttwv" target="_blank" class="community__link">→ 詳しくは回覧板へ</a>
+      <a href="https://drive.google.com/drive/folders/1kKnuQ6taV4kphvsRD-vEv2OaGNhFttwv" target="_blank" class="dept-section__link">→ 詳しくは回覧板へ</a>
+      <div class="dept-section__red-bar"></div>
     </section>
 
     <!-- 防災部 -->
     <section class="bousai" id="bousai">
-      <h2 class="bousai__title">🚒 防災部の活動</h2>
-      <p class="bousai__lead">⚠️ あなたの避難場所を確認してください</p>
+      <h2 class="bousai__title"><i class="fa-solid fa-truck-medical" aria-hidden="true"></i> 防災部の活動</h2>
+      <p class="bousai__lead"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> あなたの避難場所を確認してください</p>
       <div class="bousai__table-wrap">
         <table class="bousai__table">
           <thead>
@@ -311,26 +275,31 @@
       </div>
       <p class="bousai__kumiban">※ 組番号は回覧板・自治会事務所でご確認ください</p>
       <div class="bousai__training">
-        <p class="bousai__training-title">🏃 防災訓練</p>
+        <p class="bousai__training-title"><i class="fa-solid fa-person-walking" aria-hidden="true"></i> 防災訓練</p>
         <p>春日自治会自主防災避難訓練　27年1月予定</p>
       </div>
       <div class="bousai__checklist">
-        <p class="bousai__checklist-title">✅ 非常用持ち出し品チェックリスト</p>
+        <div class="bousai__checklist-header">
+          <p class="bousai__checklist-title"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> 非常用持ち出し品チェックリスト</p>
+          <button type="button" class="bousai__print-btn" onclick="printChecklist()">
+            <i class="fa-solid fa-print" aria-hidden="true"></i> 印刷／PDF保存
+          </button>
+        </div>
         <div class="bousai__checklist-grid">
           <div class="bousai__checklist-cat">
-            <p class="bousai__cat-name">🍱 食料</p>
+            <p class="bousai__cat-name"><i class="fa-solid fa-bowl-food" aria-hidden="true"></i> 食料</p>
             <label><input type="checkbox"> 飲料水（1人1日3リットル）</label>
             <label><input type="checkbox"> 非常食（缶詰・乾パン・レトルト）</label>
             <label><input type="checkbox"> 粉ミルク（乳幼児がいる場合）</label>
           </div>
           <div class="bousai__checklist-cat">
-            <p class="bousai__cat-name">👕 衣類など</p>
+            <p class="bousai__cat-name"><i class="fa-solid fa-shirt" aria-hidden="true"></i> 衣類など</p>
             <label><input type="checkbox"> 衣類（厚手・薄手）</label>
             <label><input type="checkbox"> タオル・毛布</label>
             <label><input type="checkbox"> 手袋・雨具</label>
           </div>
           <div class="bousai__checklist-cat">
-            <p class="bousai__cat-name">🧴 日用品</p>
+            <p class="bousai__cat-name"><i class="fa-solid fa-pump-soap" aria-hidden="true"></i> 日用品</p>
             <label><input type="checkbox"> ポリ袋・新聞紙</label>
             <label><input type="checkbox"> 筆記用具・ろうそく</label>
             <label><input type="checkbox"> ティッシュ・ウェットティッシュ</label>
@@ -340,7 +309,7 @@
             <label><input type="checkbox"> カイロ・おむつ・生理用品</label>
           </div>
           <div class="bousai__checklist-cat">
-            <p class="bousai__cat-name">💳 貴重品</p>
+            <p class="bousai__cat-name"><i class="fa-solid fa-wallet" aria-hidden="true"></i> 貴重品</p>
             <label><input type="checkbox"> 現金（小銭）</label>
             <label><input type="checkbox"> 通帳・印鑑・クレジットカード</label>
             <label><input type="checkbox"> マイナンバーカード</label>
@@ -348,7 +317,7 @@
             <label><input type="checkbox"> 運転免許証</label>
           </div>
           <div class="bousai__checklist-cat">
-            <p class="bousai__cat-name">🪖 安全対策・医療品</p>
+            <p class="bousai__cat-name"><i class="fa-solid fa-kit-medical" aria-hidden="true"></i> 安全対策・医療品</p>
             <label><input type="checkbox"> 常備薬・持病のある方の薬</label>
             <label><input type="checkbox"> お薬手帳</label>
             <label><input type="checkbox"> 包帯・絆創膏</label>
@@ -358,10 +327,10 @@
         <p class="bousai__checklist-note">※ 最低3日分、できれば1週間分を準備しましょう</p>
       </div>
       <div class="bousai__action">
-        <p class="bousai__action-title">🚨 災害が起きたら</p>
+        <p class="bousai__action-title"><i class="fa-solid fa-bell" aria-hidden="true"></i> 災害が起きたら</p>
         <p>① 災害の情報を調べる　② 安全な場所へ移動する</p>
         <p class="bousai__action-link">
-          <a href="https://www.jma.go.jp/" target="_blank">🌐 気象庁 気象情報ウェブサイト →</a>
+          <a href="https://www.jma.go.jp/" target="_blank"><i class="fa-solid fa-globe" aria-hidden="true"></i> 気象庁 気象情報ウェブサイト →</a>
         </p>
       </div>
     </section>
@@ -378,12 +347,12 @@
     <section class="join" id="join">
       <h2 class="section-title">加入のご案内</h2>
       <ul class="join__merits">
-        <li>✅ 回覧板がスマホで見られる</li>
-        <li>✅ 災害時に地域情報がいち早く届く</li>
-        <li>✅ ノルディック体操など地域活動に参加できる</li>
+        <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> 回覧板がスマホで見られる</li>
+        <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> 顔の見えるご近所づきあいができる</li>
+        <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> ノルディック体操など地域活動に参加できる</li>
       </ul>
       <p class="join__text">春日自治会への加入をお待ちしております。まずはお気軽にお電話ください。</p>
-      <a href="tel:0728582270" class="join__tel-btn">📞 072-858-2270（自治会事務所）</a>
+      <a href="tel:0728582270" class="join__tel-btn"><i class="fa-solid fa-phone" aria-hidden="true"></i> 072-858-2270（自治会事務所）</a>
     </section>
 
     <!-- アクセス -->
@@ -396,7 +365,7 @@
         </iframe>
       </div>
       <div class="access__info">
-        <p>📍 <strong>住所：</strong>大阪府枚方市春日元町2丁目18－3</p>
+        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <strong>住所：</strong>大阪府枚方市春日元町2丁目18－3</p>
         <p>　　春日公会堂</p>
       </div>
     </section>
@@ -406,7 +375,7 @@
   <!-- 固定CTA -->
   <div class="fixed-cta">
     <a href="kairan.html" class="fixed-cta__btn">
-      📋 最新の回覧板を見る
+      <i class="fa-solid fa-clipboard-list" aria-hidden="true"></i> 最新の回覧板を見る
     </a>
   </div>
 
@@ -416,5 +385,38 @@
   </footer>
 
   <script src="main.js"></script>
+  <script>
+    // 避難場所チェックリストの印刷／PDF保存
+    // 「PDF」ボタンも印刷ダイアログを開き、送信先で「PDFとして保存」を選ぶ形になります
+    function printChecklist() {
+      document.body.classList.add('is-printing');
+      window.print();
+    }
+    window.addEventListener('afterprint', function () {
+      document.body.classList.remove('is-printing');
+    });
+  </script>
+  <script>
+    // FV動画：再生が終わったら静止画に切り替えて固定。クリックで再生し直す
+    (function () {
+      const fvMedia = document.querySelector('.fv__media');
+      const fvVideo = document.querySelector('.fv__video');
+      const fvStill = document.querySelector('.fv__still');
+      if (fvVideo && fvStill && fvMedia) {
+        fvVideo.addEventListener('ended', function () {
+          fvStill.classList.add('is-visible');
+          fvVideo.style.display = 'none';
+        });
+
+        fvMedia.style.cursor = 'pointer';
+        fvMedia.addEventListener('click', function () {
+          fvStill.classList.remove('is-visible');
+          fvVideo.style.display = 'block';
+          fvVideo.currentTime = 0;
+          fvVideo.play();
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

@@ -5,6 +5,7 @@
   --color-primary: #1A1A4E;
   --color-red: #E8463A;
   --color-orange: #E8643A;
+  --color-cta: #F0955C;
   --color-text: #1a1a1a;
   --color-text-sub: #555555;
   --color-bg: #ffffff;
@@ -50,7 +51,7 @@ a {
    共通
    ======================================== */
 .section-title {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
   text-align: center;
   padding: 32px 16px 16px;
@@ -183,12 +184,34 @@ a {
   margin-top: 52px;
 }
 
-.fv__img-wrap {
+.fv__media {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100vw;
-  background-image: url('images/fire1.jpg');
-  background-size: cover;
-  background-position: center center;
+  overflow: hidden;
+  background: #0a0a14;
+}
+
+.fv__video,
+.fv__still {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.fv__still {
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.fv__still.is-visible {
+  opacity: 1;
 }
 
 .fv__img {
@@ -199,6 +222,7 @@ a {
   position: absolute;
   top: 24px;
   left: 16px;
+  z-index: 10;
 }
 
 .fv__catch {
@@ -214,11 +238,45 @@ a {
   text-shadow: 0 2px 8px rgba(0,0,0,0.7);
 }
 
+.fv__fade {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fvFadeIn 1s ease forwards;
+}
+
+.fv__catch .fv__fade {
+  display: inline-block;
+}
+
+.fv__fade--1 {
+  animation-delay: 1.5s;
+}
+
+.fv__fade--2 {
+  animation-delay: 2.5s;
+}
+
+.fv__fade--3 {
+  animation-delay: 3.5s;
+}
+
+@keyframes fvFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ========================================
    Activities Overview
    ======================================== */
 .activities-overview {
   background: #fff;
+  padding-top: 32px;
   padding-bottom: 32px;
 }
 
@@ -279,65 +337,97 @@ a {
 /* ========================================
    Nordic
    ======================================== */
-.nordic {
+/* ========================================
+   部活動セクション共通（文化・健康部／体育部／防犯部／環境部）
+   タイトル→テキスト→横長画像の縦積み構成で統一
+   ======================================== */
+.dept-section {
   background: var(--color-bg-gray);
-  padding-bottom: 0;
+  padding-bottom: 32px;
   position: relative;
+  scroll-margin-top: 70px;
 }
 
-.nordic__red-bar {
+.dept-section:nth-of-type(even) {
+  background: #fff;
+}
+
+.dept-section__red-bar {
   height: 12px;
   background: var(--color-red);
 }
 
-.nordic__title {
+.dept-section__title {
   font-size: 24px;
   font-weight: 900;
   text-align: center;
-  padding: 24px 16px 8px;
+  padding: 64px 16px 56px;
   color: var(--color-primary);
+  line-height: 1.3;
 }
 
-.nordic__catch {
+.dept-section__title small {
+  font-size: 14px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.dept-section__catch {
   font-family: var(--font-hand);
   font-size: 18px;
   text-align: center;
   color: var(--color-orange);
-  padding: 0 16px 16px;
+  padding: 0 0 8px;
   transform: rotate(-3deg);
   display: block;
 }
 
-.nordic__content {
-  position: relative;
-  padding: 0 16px;
+.dept-section__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 16px 16px;
 }
 
-.nordic__img {
-  width: 60%;
-  margin: 0 auto;
+.dept-section__project {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text-sub);
+  background: transparent;
+  display: inline-block;
+  align-self: flex-start;
+  padding: 2px 0;
 }
 
-.nordic__left {
+.dept-section__row {
   display: flex;
   flex-direction: column;
   gap: 8px;
   font-size: 16px;
-  padding: 0 0 16px;
 }
 
-.nordic__right {
+.dept-section__list {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 16px;
 }
 
-.nordic__project {
+.dept-section__list p {
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color-text);
 }
 
-.nordic__welcia {
-  background: #fff;
+.dept-section__detail {
+  font-size: 15px;
+  font-weight: 400 !important;
+  color: var(--color-text-sub);
+  padding-left: 24px;
+}
+
+.dept-section__welcia {
+  background: transparent;
   border-left: 4px solid var(--color-red);
   padding: 12px 12px;
   font-size: 16px;
@@ -347,13 +437,7 @@ a {
   align-self: flex-start;
 }
 
-.nordic__row {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.nordic__welcia-btn {
+.dept-section__welcia-btn {
   display: inline-block;
   margin-top: 8px;
   background: none;
@@ -364,6 +448,28 @@ a {
   border-radius: 4px;
   cursor: pointer;
   font-family: var(--font-main);
+}
+
+.dept-section__image {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.dept-section__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.dept-section__link {
+  display: block;
+  text-align: center;
+  color: var(--color-primary);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: underline;
+  padding: 0 16px 16px;
 }
 
 /* ウエルシアモーダル */
@@ -534,159 +640,8 @@ a {
 /* ========================================
    Sports
    ======================================== */
-.sports {
-  background: var(--color-bg-light);
-  padding-bottom: 32px;
-}
-
-.sports__content {
-  display: grid;
-  grid-template-columns: 1fr 120px;
-  grid-template-rows: auto auto;
-  gap: 16px;
-  padding: 0 16px;
-}
-
-.sports__list {
-  grid-column: 1;
-  grid-row: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.sports__imgs {
-  grid-column: 2;
-  grid-row: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.sports__img {
-  width: 100%;
-}
-
-.sports__nordic-extra {
-  grid-column: 1 / -1;
-  grid-row: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-size: 16px;
-  line-height: 1.8;
-  padding: 0 16px;
-}
-
-.sports__nordic-pc {
-  display: none;
-}
-
-.sports__item {}
-
-.sports__name {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--color-primary);
-}
-
-.sports__detail {
-  font-size: 16px;
-  color: var(--color-text-sub);
-}
-
-/* 体育部 SP/PC 切り替え */
-.sports__sp-only {
-  display: block;
-}
-
-.sports__pc-only {
-  display: none;
-}
-
-/* 体育部グリッド */
-.sports__grid {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: 0 16px;
-}
-
-.sports__col {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.sports__col--imgs {
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
-  justify-content: center;
-  padding: 8px 0;
-}
-
-.sports__col--imgs .sports__img {
-  width: auto;
-  max-width: 120px;
-  height: auto;
-}
-
-.sports__footer {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding-top: 8px;
-}
-
-/* ========================================
-   Community（防犯・環境）
-   ======================================== */
-.community {
-  background: #fff;
-  padding: 32px 16px;
-  scroll-margin-top: 70px;
-}
-
-.community__cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.community__card {
-  background: var(--color-bg-gray);
-  border-radius: 8px;
-  padding: 16px 12px;
-}
-
-.community__card-title {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: 8px;
-}
-
-.community__card-item {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.community__card-detail {
-  font-size: 16px;
-  color: var(--color-text-sub);
-}
-
-.community__link {
-  display: block;
-  text-align: center;
-  color: var(--color-primary);
-  font-size: 16px;
-  font-weight: 700;
-  text-decoration: underline;
-}
+/* 体育部・防犯部・環境部は .dept-section 共通クラスに統一済み
+   （旧 .sports / .community 系のスタイルは不要になったため削除） */
 
 /* ========================================
    Bousai（防災）
@@ -776,11 +731,54 @@ a {
   margin-bottom: 24px;
 }
 
+.bousai__checklist-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
 .bousai__checklist-title {
   font-size: 16px;
   font-weight: 700;
   color: var(--color-primary);
-  margin-bottom: 16px;
+  margin-bottom: 0;
+}
+
+.bousai__checklist-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.bousai__print-hint {
+  font-size: 11px;
+  color: var(--color-text-sub);
+  white-space: nowrap;
+}
+
+.bousai__print-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--color-bg-gray);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.bousai__print-btn:hover {
+  background: var(--color-primary);
+  color: #fff;
 }
 
 .bousai__checklist-grid {
@@ -872,6 +870,7 @@ a {
    ======================================== */
 .kairan {
   background: var(--color-bg-gray);
+  padding-top: 32px;
   padding-bottom: 32px;
 }
 
@@ -947,6 +946,7 @@ a {
 .access {
   background: var(--color-bg-gray);
   padding-bottom: 32px;
+  margin-bottom: 32px;
 }
 
 .access__map {
@@ -1024,40 +1024,49 @@ a {
 .fixed-cta {
   position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: auto;
+  right: 16px;
   z-index: 999;
-  padding: 12px 16px;
-  background: rgba(255,255,255,0.95);
-  box-shadow: 0 -2px 12px rgba(0,0,0,0.1);
+  padding: 0 0 16px;
+  background: transparent;
+  pointer-events: none;
+  text-align: right;
 }
 
 .fixed-cta__btn {
-  display: block;
-  background: var(--color-primary);
+  display: inline-block;
+  background: rgba(240, 149, 92, 0.92);
   color: #fff;
   text-align: center;
-  padding: 14px;
+  padding: 14px 24px;
   border-radius: 50px;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 15px;
   text-decoration: none;
-  max-width: 480px;
-  margin: 0 auto;
+  max-width: none;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  pointer-events: auto;
+  backdrop-filter: blur(2px);
+  transition: box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .fixed-cta__btn:hover {
-  opacity: 0.85;
+  background: rgba(240, 149, 92, 1);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.35);
 }
 
 @media (min-width: 768px) {
   .fixed-cta {
-    padding: 10px 24px;
+    left: auto;
+    right: 24px;
+    bottom: 24px;
+    padding: 0;
+    text-align: right;
   }
   .fixed-cta__btn {
-    font-size: 14px;
-    padding: 10px;
-    max-width: 320px;
+    font-size: 16px;
+    padding: 14px 28px;
+    max-width: none;
   }
 }
 
@@ -1068,7 +1077,7 @@ a {
   background: var(--color-primary);
   color: #fff;
   text-align: center;
-  padding: 24px 16px 80px;
+  padding: 24px 16px;
 }
 
 .footer__copy {
@@ -1083,9 +1092,13 @@ a {
     font-size: 18px;
   }
 
+  .footer {
+    padding: 32px 40px;
+  }
+
   .section-title {
     font-size: 32px;
-    padding: 48px 40px 24px;
+    padding: 24px 40px 24px;
   }
 
   .header__inner {
@@ -1096,11 +1109,8 @@ a {
     font-size: 20px;
   }
 
-  .fv__img-wrap {
+  .fv__media {
     height: 75vh;
-    background-image: url('images/fire1_pc.jpg');
-    background-size: cover;
-    background-position: center center;
   }
 
   .fv__img {
@@ -1123,7 +1133,7 @@ a {
   .activities-overview {
     max-width: 1300px;
     margin: 0 auto;
-    padding: 0 40px 48px;
+    padding: 48px 40px 48px;
   }
 
   .activities-overview__intro {
@@ -1157,218 +1167,110 @@ a {
     font-size: 16px;
   }
 
-  .nordic {
+  .dept-section {
+    padding-bottom: 48px;
+  }
+
+  .dept-section__title {
+    font-size: 36px;
     max-width: 1300px;
     margin: 0 auto;
   }
 
-  .nordic__title {
-    font-size: 36px;
-  }
-
-  .nordic__catch {
-    font-size: 32px;
-  }
-
-  .nordic__content {
-    display: flex;
-    align-items: flex-start;
-    gap: 32px;
-    padding: 0 40px;
-  }
-
-  .nordic__left {
-    flex: 1;
+  .dept-section__catch {
     font-size: 18px;
-    padding: 16px 0 40px;
-    gap: 12px;
   }
 
-  .nordic__welcia {
+  .dept-section__project {
+    font-size: 18px;
+  }
+
+  .dept-section__body {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 16px 40px 24px;
+    gap: 24px;
+  }
+
+  .dept-section__row,
+  .dept-section__list {
+    font-size: 18px;
+    gap: 16px;
+  }
+
+  .dept-section__detail {
+    font-size: 16px;
+  }
+
+  .dept-section__welcia {
     align-self: flex-start;
     white-space: nowrap;
-    margin-top: 16px;
+    margin-top: 8px;
   }
 
-  .nordic__right {
-    width: 380px;
-    flex-shrink: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-  }
-
-  .nordic__img {
-    width: 100%;
-    max-width: 380px;
-    margin: 0;
-  }
-
-  .sports {
-    max-width: 1300px;
+  .dept-section__image {
+    max-width: 900px;
     margin: 0 auto;
   }
 
-  .sports__content {
-    display: grid;
-    grid-template-columns: 1fr 1fr auto;
-    grid-template-rows: auto auto;
-    gap: 24px 32px;
-    padding: 0 40px;
-    align-items: center;
-  }
-
-  .sports__list {
-    grid-column: 1 / 3;
-    grid-row: 1;
-    column-count: 2;
-    column-gap: 32px;
-    margin-top: 0;
-  }
-
-  .sports__item {
-    break-inside: avoid;
-    margin-bottom: 24px;
-  }
-
-  .sports__imgs {
-    grid-column: 3;
-    grid-row: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .sports__img {
-    width: auto;
-    max-width: 130px;
-    height: auto;
-  }
-
-  .sports__nordic-extra {
-    display: none;
-  }
-
-  .sports__nordic-pc {
-    grid-column: 1 / 4;
-    grid-row: 2;
-    display: flex;
-    flex-direction: row;
-    gap: 32px;
-    margin-top: 0;
-  }
-
-  .sports__sp-only {
-    display: none;
-  }
-
-  .sports__pc-only {
-    display: block;
-  }
-
-  .sports__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr auto;
-    grid-template-rows: auto auto;
-    gap: 24px 32px;
-    padding: 0 40px;
-    align-items: center;
-  }
-
-  .sports__col--imgs {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .sports__col {
-    gap: 24px;
-  }
-
-  .sports__col--imgs {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .sports__col--imgs .sports__img {
-    width: auto;
-    max-width: 130px;
-    height: auto;
-  }
-
-  .sports__footer {
-    display: none;
-  }
-
-  .sports__name {
-    font-size: 20px;
-  }
-
-  .sports__detail {
-    font-size: 18px;
-  }
-
-  .sports__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr auto;
-    grid-template-rows: auto auto auto;
-    gap: 24px 32px;
-    padding: 0 40px;
-    align-items: center;
-  }
-
-  .sports__col--imgs {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .sports__col--imgs .sports__img {
-    max-width: 130px;
-    height: auto;
-  }
-
-  .community {
+  .dept-section__link {
     max-width: 1300px;
     margin: 0 auto;
-    padding: 48px 40px;
-  }
-
-  .community__cards {
-    grid-template-columns: repeat(2,1fr);
-    gap: 24px;
-  }
-
-  .community__card-title {
-    font-size: 18px;
-  }
-
-  .community__card-item {
-    font-size: 16px;
-  }
-
-  .community__card-detail {
-    font-size: 16px;
+    padding: 0 40px 24px;
   }
 
   .bousai {
     padding: 48px 40px;
+    background: #fff;
+    color: var(--color-text);
+    border: 3px solid var(--color-primary);
+    border-radius: 12px;
+    max-width: 1100px;
+    margin: 48px auto;
   }
 
   .bousai__title {
     font-size: 36px;
+    color: var(--color-primary);
   }
 
   .bousai__lead {
     font-size: 20px;
+    color: var(--color-red);
+  }
+
+  .bousai__kumiban {
+    color: var(--color-text-sub);
+  }
+
+  .bousai__training {
+    background: var(--color-bg-gray);
+  }
+
+  .bousai__training-title,
+  .bousai__training p {
+    color: var(--color-text);
+  }
+
+  .bousai__checklist {
+    border: 1px solid #eee;
+  }
+
+  .bousai__map-link {
+    background: var(--color-primary);
+    color: #fff;
+  }
+
+  .bousai__action {
+    color: var(--color-text);
+  }
+
+  .bousai__action-title {
+    color: var(--color-red);
+  }
+
+  .bousai__action-link a {
+    color: var(--color-primary);
   }
 
   .bousai__table {
@@ -1386,16 +1288,30 @@ a {
   }
 
   .bousai__checklist-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .bousai__checklist-cat label {
     font-size: 16px;
   }
 
+  .bousai__title,
+  .bousai__lead,
+  .bousai__table-wrap,
+  .bousai__kumiban,
+  .bousai__training,
+  .bousai__checklist,
+  .bousai__action,
+  .bousai__map-link {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .kairan {
     max-width: 1300px;
     margin: 0 auto;
+    padding-top: 48px;
     padding-bottom: 48px;
   }
 
@@ -1431,7 +1347,7 @@ a {
 
   .access {
     max-width: 1300px;
-    margin: 0 auto;
+    margin: 0 auto 48px;
     padding-bottom: 48px;
   }
 
@@ -1453,17 +1369,17 @@ a {
 /* 回覧板ボタン */
 .kairan__btn-wrap {
   text-align: center;
-  padding: 0 16px 32px;
+  padding: 0 16px 0;
 }
 
 .kairan__btn {
   display: inline-block;
-  background: var(--color-primary);
+  background: var(--color-cta);
   color: #fff;
   font-size: 16px;
   font-weight: 700;
   padding: 16px 32px;
-  border-radius: 8px;
+  border-radius: 50px;
 }
 
 /* ========================================
@@ -1476,22 +1392,52 @@ a {
   width: 100%;
   height: 100vw;
   max-height: 450px;
-  background-image: url('images/firework_bursting_sp.jpg');
-  background-size: cover;
-  background-position: center center;
   display: flex;
   align-items: flex-end;
+  overflow: hidden;
+  background: #0a0a14;
 }
 
-.event-fv__img-wrap {
+.event-fv__media {
   position: absolute;
   inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.event-fv__video,
+.event-fv__still {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.event-fv__still {
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.event-fv__still.is-visible {
+  opacity: 1;
+}
+
+.event-fv__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
   background: rgba(0,0,0,0.35);
+  pointer-events: none;
 }
 
 .event-fv__text {
   position: relative;
-  z-index: 1;
+  z-index: 10;
   padding: 24px 20px;
   color: #fff;
 }
@@ -1662,7 +1608,8 @@ a {
 .event-fireworks__img-wrap {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  background-color: rgba(0,0,0,0.55);
+  background-blend-mode: darken;
 }
 
 .event-fireworks__text {
@@ -1813,7 +1760,7 @@ a {
   font-weight: 700;
   font-size: 15px;
   text-decoration: none;
-  background: var(--color-primary);
+  background: var(--color-cta);
   color: #fff;
   text-align: center;
 }
@@ -1885,9 +1832,6 @@ a {
   .event-fv {
     height: 75vh;
     max-height: 600px;
-    background-image: url('images/firework_bursting.jpg');
-    background-size: cover;
-    background-position: center 20%;
   }
 
   .event-fv__title {
@@ -1985,36 +1929,37 @@ a {
 .event-next {
   background: var(--color-primary);
   color: #fff;
-  padding: 32px 16px;
+  padding: 16px 16px 12px;
   text-align: center;
   margin-top: 52px;
 }
 
 .event-next__title {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 900;
-  margin-bottom: 24px;
-  line-height: 1.5;
+  margin-bottom: 12px;
+  line-height: 1.4;
 }
 
 .event-next__info {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 6px;
   text-align: left;
   max-width: 500px;
-  margin: 0 auto 16px;
+  margin: 0 auto 8px;
+  font-size: 14px;
 }
 
 .event-next__info .event-info__label {
   font-weight: 700;
-  min-width: 70px;
+  min-width: 60px;
 }
 
 .event-next__note {
-  font-size: 14px;
+  font-size: 12px;
   opacity: 0.8;
-  margin-top: 16px;
+  margin-top: 8px;
 }
 
 @media (min-width: 768px) {
@@ -2023,7 +1968,8 @@ a {
   }
 
   .event-next {
-    padding-top: 80px;
+    padding-top: 40px;
+    padding-bottom: 24px;
   }
 
   .event-next__info {
@@ -2031,7 +1977,8 @@ a {
     flex-wrap: wrap;
     justify-content: center;
     gap: 24px;
-    max-width: 900px;
+    max-width: 1100px;
+    font-size: 16px;
   }
 
   .event-next__note {
@@ -2193,9 +2140,9 @@ a {
   }
 }
 
-/* nordic__row 横並び：1054px以上 */
+/* dept-section__row 横並び：1054px以上 */
 @media (min-width: 1054px) {
-  .nordic__row {
+  .dept-section__row {
     display: flex;
     flex-direction: row;
     gap: 24px;
@@ -2210,5 +2157,52 @@ a {
 @media (min-width: 768px) {
   .sp-only {
     display: none;
+  }
+}
+
+/* ========================================
+   印刷用（避難場所チェックリストのみ印刷）
+   body に is-printing クラスが付いている間だけ有効
+   ======================================== */
+@media print {
+  body.is-printing .header,
+  body.is-printing .nav-menu,
+  body.is-printing .nav-overlay,
+  body.is-printing .fv,
+  body.is-printing .activities-overview,
+  body.is-printing .dept-section,
+  body.is-printing .bousai__title,
+  body.is-printing .bousai__lead,
+  body.is-printing .bousai__table-wrap,
+  body.is-printing .bousai__kumiban,
+  body.is-printing .bousai__training,
+  body.is-printing .bousai__map-link,
+  body.is-printing .bousai__action,
+  body.is-printing .kairan,
+  body.is-printing .join,
+  body.is-printing .access,
+  body.is-printing .footer,
+  body.is-printing .fixed-cta,
+  body.is-printing .bousai__print-btn {
+    display: none !important;
+  }
+
+  body.is-printing .bousai {
+    background: #fff !important;
+    color: #000 !important;
+    border: none !important;
+    box-shadow: none !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body.is-printing .bousai__checklist {
+    border: 1px solid #000;
+    box-shadow: none;
+  }
+
+  body.is-printing .bousai__checklist-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
