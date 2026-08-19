@@ -64,7 +64,7 @@
   <nav class="nav-menu" id="navMenu">
     <button class="nav-menu__close" aria-label="メニューを閉じる"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
     <ul class="nav-menu__list">
-      <li><a href="https://drive.google.com/drive/folders/1kKnuQ6taV4kphvsRD-vEv2OaGNhFttwv" target="_blank" class="nav-menu__link"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i> web回覧板</a></li>
+      <li><a href="kairan.html" class="nav-menu__link"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i> web回覧板</a></li>
       <li><a href="index.html" class="nav-menu__link"><i class="fa-solid fa-house" aria-hidden="true"></i> 自治会トップページへ</a></li>
       <li><a href="index.html#activities" class="nav-menu__link"><i class="fa-solid fa-person-walking" aria-hidden="true"></i> 活動紹介</a></li>
       <li><a href="index.html#join" class="nav-menu__link"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> 加入案内</a></li>
@@ -160,9 +160,16 @@
       <div class="event-modal__content">
         <button class="event-modal__close" id="closeModal"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
         <h3 class="event-modal__title">2025年 チラシ・プログラム</h3>
-        <div class="event-modal__imgs">
-          <img src="images/kasuga_festival_poster_2025.jpg" alt="2025年ポスター" class="event-modal__img">
-          <img src="images/kasuga_festival_program_2025.jpg" alt="2025年プログラム" class="event-modal__img">
+        <div class="event-modal__pdf">
+          <iframe
+            src="images/kasuga_festival_poster_2025.pdf#view=FitH"
+            class="event-modal__pdf-frame"
+            title="2025年 春日フェスティバル チラシ・プログラム">
+          </iframe>
+          <p class="event-modal__pdf-fallback">
+            うまく表示されない場合は
+            <a href="images/kasuga_festival_poster_2025.pdf" target="_blank" rel="noopener">こちらからPDFを開く →</a>
+          </p>
         </div>
       </div>
     </div>
@@ -204,7 +211,7 @@
 
     <!-- ★修正⑦：次の導線ボタン -->
     <div class="event-next-action">
-      <a href="https://drive.google.com/drive/folders/1kKnuQ6taV4kphvsRD-vEv2OaGNhFttwv" target="_blank" class="event-next-action__btn"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i> web回覧板を見る</a>
+      <a href="kairan.html" class="event-next-action__btn"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i> web回覧板を見る</a>
       <a href="index.html#join" class="event-next-action__btn event-next-action__btn--sub"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> 自治会への加入はこちら</a>
     </div>
 

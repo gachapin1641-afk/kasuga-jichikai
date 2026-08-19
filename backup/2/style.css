@@ -276,6 +276,7 @@ a {
    ======================================== */
 .activities-overview {
   background: #fff;
+  padding-top: 32px;
   padding-bottom: 32px;
 }
 
@@ -456,7 +457,8 @@ a {
 
 .dept-section__img {
   width: 100%;
-  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
   display: block;
   border-radius: 12px;
 }
@@ -869,6 +871,7 @@ a {
    ======================================== */
 .kairan {
   background: var(--color-bg-gray);
+  padding-top: 32px;
   padding-bottom: 32px;
 }
 
@@ -1131,7 +1134,7 @@ a {
   .activities-overview {
     max-width: 1300px;
     margin: 0 auto;
-    padding: 0 40px 48px;
+    padding: 48px 40px 48px;
   }
 
   .activities-overview__intro {
@@ -1309,6 +1312,8 @@ a {
   .kairan {
     max-width: 1300px;
     margin: 0 auto;
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 
   .kairan__text {
@@ -2065,8 +2070,8 @@ a {
   background: #fff;
   border-radius: 12px;
   padding: 24px 16px;
-  max-width: 90vw;
-  max-height: 90vh;
+  max-width: 95vw;
+  max-height: 95vh;
   overflow-y: auto;
   width: 100%;
 }
@@ -2107,6 +2112,55 @@ a {
   border-radius: 8px;
 }
 
+/* イベントモーダル内のPDF埋め込み表示 */
+.event-modal__pdf {
+  width: 100%;
+}
+
+.event-modal__pdf-frame {
+  width: 100%;
+  height: 85vh;      /* PC・大きめの画面向け */
+  min-height: 500px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+/* SP（767px以下）ではモーダルの余白とPDFの高さを画面に収まる程度に抑える */
+@media (max-width: 767px) {
+  .event-modal__content {
+    padding: 16px 12px;
+    max-width: 96vw;
+    max-height: 92vh;
+  }
+
+  .event-modal__title {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .event-modal__pdf-frame {
+    height: 65vh;
+    min-height: 320px;
+  }
+
+  .event-modal__pdf-fallback {
+    font-size: 13px;
+  }
+}
+
+.event-modal__pdf-fallback {
+  margin-top: 12px;
+  font-size: 14px;
+  text-align: center;
+  color: #555;
+}
+
+.event-modal__pdf-fallback a {
+  color: var(--color-primary);
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 @media (min-width: 768px) {
   .event-program__list {
     max-width: 700px;
@@ -2124,7 +2178,7 @@ a {
   }
 
   .event-modal__content {
-    max-width: 800px;
+    max-width: 1100px;
   }
 
   .event-modal__imgs {
