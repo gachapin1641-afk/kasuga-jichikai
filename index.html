@@ -30,6 +30,23 @@
       @media (min-width: 769px) {
         .welcia-modal__place-br { display: none; }
       }
+      /* welciaモーダル：曜日ごとの見出し・行間隔調整 */
+      .welcia-modal__schedule {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      .welcia-modal__day-label {
+        margin: 0 0 4px;
+        padding: 0 12px;
+        font-weight: bold;
+        font-size: 14px;
+      }
+      .welcia-modal__day-label--second {
+        margin-top: 10px;
+      }
+      .welcia-modal__schedule .welcia-modal__row {
+        margin-bottom: 2px;
+      }
     </style>
 </head>
 <body>
@@ -162,13 +179,13 @@
 
         <!-- お支払い -->
         <div class="welcia-modal__payment">
-          <p><i class="fa-solid fa-credit-card" aria-hidden="true"></i> クレジット・モバイル決済・電子マネー可</p>
+          <p><i class="fa-solid fa-credit-card" aria-hidden="true"></i> クレジット・モバイル決済<br class="welcia-modal__place-br">・電子マネー可</p>
           <p><i class="fa-solid fa-building-columns" aria-hidden="true"></i> 公共料金・各種料金のお支払い可</p>
         </div>
 
         <!-- 時刻 -->
-        <p class="welcia-modal__sub"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> 毎週火曜日（①②）</p>
         <div class="welcia-modal__schedule">
+          <p class="welcia-modal__day-label"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> 毎週火曜日</p>
           <div class="welcia-modal__row">
             <span class="welcia-modal__num">①</span>
             <span class="welcia-modal__place">春日元町公園前</span>
@@ -179,13 +196,14 @@
             <span class="welcia-modal__place">春日公会堂駐車場</span>
             <span class="welcia-modal__time">16:00〜16:20</span>
           </div>
+          <p class="welcia-modal__day-label welcia-modal__day-label--second"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> 毎週水曜日</p>
           <div class="welcia-modal__row">
             <span class="welcia-modal__num">③</span>
             <span class="welcia-modal__place">スイートガーデン<br class="welcia-modal__place-br">枚方津田</span>
-            <span class="welcia-modal__time">確認中</span>
+            <span class="welcia-modal__time">15:30〜16:00</span>
           </div>
         </div>
-        <p class="welcia-modal__note">※③スイートガーデン枚方津田は曜日・時間を確認中です<br>※道路状況や販売状況により到着時間が前後する場合があります<br>※ご利用状況により販売時間が変更になる可能性があります</p>
+        <p class="welcia-modal__note">※道路状況や販売状況により到着時間が前後する場合があります<br>※ご利用状況により販売時間が変更になる可能性があります</p>
 
         <!-- お問い合わせ -->
         <div class="welcia-modal__contact">
