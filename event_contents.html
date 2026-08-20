@@ -45,6 +45,33 @@
     "keywords": "枚方 花火 夏祭り 秋祭り 大阪 関西 無料 地域イベント"
   }
   </script>
+  <style>
+    /* チラシ画像（縦長1枚、スクロールで全体を見られる） */
+    .event-modal__poster-scroll {
+      width: 100%;
+      max-height: 65vh;
+      overflow-y: auto;
+      border-radius: 8px;
+      background: #f5f5f5;
+      -webkit-overflow-scrolling: touch;
+    }
+    .event-modal__poster-img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    /* PC幅ではモーダル自体の横幅を抑えて、画像全体が見渡しやすいサイズにする */
+    @media (min-width: 769px) {
+      .event-modal__content {
+        max-width: 420px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .event-modal__poster-scroll {
+        max-height: 75vh;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -161,14 +188,12 @@
         <button class="event-modal__close" id="closeModal"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
         <h3 class="event-modal__title">2025年 チラシ・プログラム</h3>
         <div class="event-modal__pdf">
-          <iframe
-            src="images/kasuga_festival_poster_2025.PDF#view=FitH"
-            class="event-modal__pdf-frame"
-            title="2025年 春日フェスティバル チラシ・プログラム">
-          </iframe>
+          <div class="event-modal__poster-scroll">
+            <img src="images/kasuga_festival_poster_2025_full.jpg" alt="2025年 春日フェスティバル チラシ・プログラム" class="event-modal__poster-img">
+          </div>
           <p class="event-modal__pdf-fallback">
-            うまく表示されない場合は
-            <a href="images/kasuga_festival_poster_2025.PDF" target="_blank" rel="noopener">こちらからPDFを開く →</a>
+            印刷用のPDFは
+            <a href="images/kasuga_festival_poster_2025.PDF" target="_blank" rel="noopener">こちらから開く →</a>
           </p>
         </div>
       </div>
