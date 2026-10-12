@@ -335,6 +335,64 @@ a {
 }
 
 /* ========================================
+   活動報告 CTAボタン（自治会で出来ること の下）
+   ======================================== */
+.katsudo-cta {
+  text-align: center;
+  padding: 24px 16px 0;
+}
+
+.katsudo-cta__btn {
+  display: inline-block;
+  background: var(--color-cta);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 50px;
+}
+
+@media (min-width: 768px) {
+  .katsudo-cta {
+    padding-top: 32px;
+  }
+}
+
+/* 最新記事タイトルのみのプレビューリスト（ブログの見出しのようなイメージ） */
+.katsudo-preview {
+  list-style: none;
+  max-width: 500px;
+  margin: 20px auto 0;
+  padding: 0;
+  text-align: left;
+}
+
+.katsudo-preview li {
+  border-bottom: 1px solid #eee;
+}
+
+.katsudo-preview li a {
+  display: block;
+  padding: 12px 4px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.katsudo-preview li a::before {
+  content: "・";
+  color: var(--color-cta);
+  font-weight: 900;
+  margin-right: 4px;
+}
+
+@media (min-width: 768px) {
+  .katsudo-preview li a {
+    font-size: 16px;
+  }
+}
+
+/* ========================================
    Nordic
    ======================================== */
 /* ========================================
@@ -1019,6 +1077,162 @@ a {
 
 .kairan-page__note a {
   color: var(--color-primary);
+}
+
+/* 活動報告ページ */
+.katsudo-page {
+  padding: 80px 16px 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.katsudo-page__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.katsudo-page__lead {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 24px;
+  line-height: 1.8;
+}
+
+.katsudo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.katsudo-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.katsudo-card__images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.katsudo-card__images img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.katsudo-card__body {
+  padding: 16px;
+}
+
+.katsudo-card__dept {
+  display: inline-block;
+  background: var(--color-bg-light);
+  color: var(--color-orange);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.katsudo-card__date {
+  font-size: 13px;
+  color: #888;
+  margin-left: 8px;
+}
+
+.katsudo-card__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.katsudo-card__text {
+  font-size: 15px;
+  color: var(--color-text-sub);
+  line-height: 1.8;
+}
+
+/* microCMSから取り込んだ記事用（代表写真・本文中の写真・読み込み中メッセージ） */
+.katsudo-card {
+  scroll-margin-top: 80px;
+}
+
+.katsudo-card__eyecatch {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.katsudo-card__text p + p,
+.katsudo-card__text figure + p,
+.katsudo-card__text p + figure {
+  margin-top: 12px;
+}
+
+.katsudo-card__text figure {
+  margin: 12px 0 0;
+}
+
+/* 写真は本来の比率のまま表示。縦長は高さ560pxまで、横長は幅いっぱいまで */
+.katsudo-card__text img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 560px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+/* ギャラリー（複数画像）：本文の下に並べる。スマホは2列、パソコンは3列。写真は切り取らず4:3の枠に入れる */
+.katsudo-card__gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.katsudo-card__gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #f2f2f2;
+  border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+  .katsudo-card__gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.katsudo-message {
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+  padding: 24px 0;
+}
+
+@media (min-width: 768px) {
+  .katsudo-page {
+    padding-top: 100px;
+  }
+
+  .katsudo-card__title {
+    font-size: 20px;
+  }
 }
 
 /* 固定CTA */

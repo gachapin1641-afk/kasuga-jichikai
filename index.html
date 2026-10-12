@@ -72,6 +72,7 @@
     <button class="nav-menu__close" aria-label="メニューを閉じる"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
     <ul class="nav-menu__list">
       <li><a href="kairan.html" class="nav-menu__link"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i> web回覧板</a></li>
+      <li><a href="katsudo.html" class="nav-menu__link"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> 活動報告</a></li>
       <li><a href="event_contents.html" class="nav-menu__link"><i class="fa-solid fa-fire" aria-hidden="true"></i> イベント（花火大会）</a></li>
       <li><a href="#activities" class="nav-menu__link"><i class="fa-solid fa-person-walking" aria-hidden="true"></i> 活動紹介</a></li>
       <li><a href="#join" class="nav-menu__link"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> 加入案内</a></li>
@@ -132,6 +133,13 @@
           <span class="activities-card__icon"><i class="fa-solid fa-leaf" aria-hidden="true"></i></span>
           <span class="activities-card__name">環境部の活動</span>
         </a>
+      </div>
+      <div class="katsudo-cta">
+        <a href="katsudo.html" class="katsudo-cta__btn">
+          <i class="fa-solid fa-newspaper" aria-hidden="true"></i> 活動報告を見る →
+        </a>
+        <!-- 最新3件のタイトルを、main.jsがmicroCMSから取得してここに表示します -->
+        <ul class="katsudo-preview" id="katsudoPreview"></ul>
       </div>
     </section>
 
