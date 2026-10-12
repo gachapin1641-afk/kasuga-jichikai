@@ -76,10 +76,9 @@ const stallData = [
     cardColor: '#FFF3E0',
     nameColor: '#E65100',
     images: [
-      { src: 'images/yakisoba.png', alt: 'やきそば' },
-      { src: 'images/beer.png', alt: 'ビール' }
+      { src: 'images/yakisoba.png', alt: 'やきそば' }
     ],
-    menu: ['やきそば', 'ハッシュドポテト', 'ビール'],
+    menu: ['やきそば', 'フランクフルト'],
     trio: false
   },
   {
@@ -99,20 +98,19 @@ const stallData = [
     nameColor: '#2E7D32',
     images: [
       { src: 'images/pan_melonpan.png', alt: 'メロンパン' },
-      { src: 'images/food_hotdog.png', alt: 'ホットドッグ' },
-      { src: 'images/sweets_donut.png', alt: 'ドーナツ' }
+      { src: 'images/food_hotdog.png', alt: 'ホットドッグ' }
     ],
-    menu: ['メロンパン', 'ホットドッグ', 'ドーナツ'],
-    trio: true
+    menu: ['メロンパン', 'ホットドッグ', 'ソフトクリーム'],
+    trio: false
   },
   {
     name: 'お米のお菓子はな',
     cardColor: '#F3E5F5',
     nameColor: '#6A1B9A',
     images: [
-      { src: 'images/sweets_cookie.png', alt: 'クッキー' }
+      { src: 'images/sweets_cookie.png', alt: '焼き菓子' }
     ],
-    menu: ['スィートポテト', 'クッキー'],
+    menu: ['シフォンケーキ', '焼き菓子'],
     trio: false
   },
   {
@@ -126,33 +124,53 @@ const stallData = [
     trio: false
   },
   {
-    name: 'こども会',
+    name: 'バルーンアート',
     cardColor: '#FFF9C4',
     nameColor: '#F57F17',
-    images: [
-      { src: 'images/fukubiki_taikai.png', alt: '福引大会' }
-    ],
-    menu: [{ text: 'あてもの' }, { text: '何が当たるかわくわく', desc: true }],
+    images: [],
+    menu: [{ text: '風船であそぼ！' }, { text: 'バルーンアートの無料配布（小学生以下）', desc: true }],
     trio: false
   },
   {
-    name: '本部（こども会）',
+    name: '春日自治会',
+    cardColor: '#EFEBE9',
+    nameColor: '#4E342E',
+    images: [],
+    menu: ['ホットコーヒー', 'お茶', 'ジュース', { text: '花火募金にご協力ください', desc: true }],
+    trio: false
+  },
+  {
+    name: '春日子ども会',
     cardColor: '#E8EAF6',
     nameColor: '#283593',
     images: [
-      { src: 'images/omatsuri_fukuro_superball.png', alt: 'スーパーボールすくい' }
+      { src: 'images/omatsuri_fukuro_superball.png', alt: 'おもちゃ' }
     ],
-    menu: [{ text: 'スーパーボールすくい' }, { text: '無料で楽しめる', desc: true }, { text: '何個すくえるかな？', desc: true }],
+    menu: ['おもちゃ販売'],
     trio: false
   },
   {
-    name: '本部',
-    cardColor: '#EFEBE9',
-    nameColor: '#4E342E',
-    images: [
-      { src: 'images/kid_job_boy_syouboushi.png', alt: 'ちびっこ消防士' }
-    ],
-    menu: [{ text: 'ホットコーヒー' }, { text: '（花火募金募集）', desc: true }, 'ちびっこ消防士フォト撮影'],
+    name: 'ポン菓子 ポン吉',
+    cardColor: '#FBE9E7',
+    nameColor: '#BF360C',
+    images: [],
+    menu: ['ポン菓子', 'おでん', 'あてもの'],
+    trio: false
+  },
+  {
+    name: '雨ノチ晴レ',
+    cardColor: '#E0F7FA',
+    nameColor: '#00838F',
+    images: [],
+    menu: ['チキンオーバーライス', '肉巻きおにぎり', '手作りジンジャーエール', 'ドリロコス 他'],
+    trio: false
+  },
+  {
+    name: "M's cafe",
+    cardColor: '#F1F8E9',
+    nameColor: '#558B2F',
+    images: [],
+    menu: ['ミニクレープ 他'],
     trio: false
   }
 ];
@@ -169,6 +187,11 @@ if (stallGrid) {
       .map(img => `<img src="${img.src}" alt="${img.alt}">`)
       .join('');
 
+    // 写真がないお店は、写真の枠そのものを出さない（文字だけのカードになる）
+    const imgsBlock = stall.images.length > 0
+      ? `<div class="${imgsClass}">${imgsHTML}</div>`
+      : '';
+
     const menuHTML = stall.menu
       .map(item => {
         if (typeof item === 'object' && item.desc) {
@@ -183,7 +206,7 @@ if (stallGrid) {
       <div class="event-stall-card" style="--card-color: ${stall.cardColor};">
         <p class="event-stall-card__name" style="color:${stall.nameColor};">${stall.name}</p>
         <div class="event-stall-card__inner">
-          <div class="${imgsClass}">${imgsHTML}</div>
+          ${imgsBlock}
           <ul class="event-stall-card__menu">${menuHTML}</ul>
         </div>
       </div>`;

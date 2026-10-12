@@ -2240,7 +2240,7 @@ a {
 .event-program__time {
   font-weight: 700;
   color: var(--color-primary);
-  min-width: 52px;
+  min-width: 60px;
   font-size: 16px;
 }
 
@@ -2474,5 +2474,82 @@ a {
 
   body.is-printing .bousai__checklist-grid {
     grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+
+/* ========================================
+   協賛・ご協力（event_contents.html）
+   ======================================== */
+.event-sponsor {
+  background: #fff;
+  padding: 24px 16px;
+}
+
+.event-sponsor__inner {
+  background: #E3F2FD;
+  border: 2px solid var(--color-primary);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.event-sponsor__title {
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 900;
+  text-align: center;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.event-sponsor__lead {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.event-sponsor__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.event-sponsor__item {
+  background: #fff;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .event-sponsor {
+    padding: 32px 40px;
+  }
+
+  .event-sponsor__inner {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+
+  .event-sponsor__title {
+    font-size: 24px;
+  }
+
+  .event-sponsor__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 16px;
+  }
+
+  .event-sponsor__item {
+    font-size: 18px;
   }
 }
